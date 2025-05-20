@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidya Mandala | Perpustakaan Digital</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Tambahan CSS untuk memberi jarak antar section judul -->
+  <style>
+    h2 {
+      margin-top: 48px;
+      margin-bottom: 16px;
+    }
+
+    .book-list {
+      margin-bottom: 32px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-area">
+        <img src="logo.png" alt="Logo Perpustakaan" class="logo">
+        <div class="title">
+            <h1>Vidya Mandala</h1>
+            <p>Perpustakaan menyimpan warisan masa lalu, mengembangkan pengetahuan masa kini, dan menjadi landasan untuk inovasi masa depan — menciptakan siklus pengetahuan yang tidak pernah berakhir.</p>
+        </div>
+    </div>
+    <div class="right-header">
+      <button id="theme-toggle">🌙</button>
+      <nav class="menu-bar">
+        <ul class="menu">
+          <li><a href="index.html" class="nav-link">Beranda</a></li>
+          <li><a href="profil.html" class="nav-link">Profil</a></li>
+          <li><a href="opac.html" class="nav-link">OPAC</a></li>
+          <li><a href="layanan.html" class="nav-link">Layanan</a></li>
+          <li><a href="koleksi.html" class="nav-link">Koleksi</a></li>
+          <li><a href="panduan.html" class="nav-link">Panduan</a></li>
+        </ul>
+        </nav>
+</header>
+
+<main>
+    <!-- Search Box -->
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Cari judul buku..." onkeyup="searchBooks()">
+  </div>
+  
+    <section class="home">
+        <h2>Selamat Datang di Vidya Mandala</h2>
+        <p>Temukan berbagai koleksi buku terbaik kami.</p>
+      </section>
+      
+     
+
+    <section id="koleksi">
+        <h2>Buku Rekomendasi</h2>
+<div class="book-list">
+  <div class="book" onclick="showBookModal('the-alchemist.jpg', 'The Alchemist', 'Sebuah novel karya Paulo Coelho tentang perjalanan menemukan takdir.', 'Paulo Coelho')">
+    <img src="the-alchemist.jpg" alt="The Alchemist">
+    <p>The Alchemist</p>
+  </div>
+
+  <div class="book" onclick="showBookModal('atomic-habits.jpg', 'Atomic Habits', 'Buku tentang perubahan kecil yang menghasilkan hasil luar biasa.', 'James Clear')">
+    <img src="atomic-habits.jpg" alt="Atomic Habits">
+    <p>Atomic Habits</p>
+  </div>
+</div>
+
+    
+<h2>Buku Fiksi</h2>
+<div class="book-list">
+  <div class="book" onclick="showBookModal('harry-potter.jpg', 'Harry Potter', 'Petualangan Harry Potter di dunia sihir.', 'J.K. Rowling')">
+    <img src="harry-potter.jpg" alt="Harry Potter">
+    <p>Harry Potter</p>
+  </div>
+
+  <div class="book" onclick="showBookModal('to-kill-a-mockingbird.jpg', 'To Kill a Mockingbird', 'Kisah tentang keadilan dan rasisme.', 'Harper Lee')">
+    <img src="to-kill-a-mockingbird.jpg" alt="To Kill a Mockingbird">
+    <p>To Kill a Mockingbird</p>
+  </div>
+</div>
+
+    
+<h2>Buku Komik</h2>
+<div class="book-list">
+  <div class="book" onclick="showBookModal('one-piece.jpg', 'One Piece', 'Petualangan bajak laut mencari harta karun legendaris.', 'Eiichiro Oda')">
+    <img src="one-piece.jpg" alt="One Piece">
+    <p>One Piece</p>
+  </div>
+
+  <div class="book" onclick="showBookModal('naruto.jpg', 'Naruto', 'Cerita seorang ninja muda yang ingin menjadi Hokage.', 'Masashi Kishimoto')">
+    <img src="naruto.jpg" alt="Naruto">
+    <p>Naruto</p>
+  </div>
+</div>
+
+        </div>
+    </section>
+    
+    </section>
+
+    <!-- Modal Pop-up Box -->
+<!-- Modal Pop-up Box -->
+<div id="book-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <img id="modal-cover" alt="Sampul Buku" style="max-width: 100%; height: auto; display: block; margin: auto;">
+    <h3 id="modal-title">Judul Buku</h3>
+    <p id="modal-author">Penulis: </p>
+    <p id="modal-description">Deskripsi Buku</p>
+    <button onclick="comingSoon()">Pinjam Buku</button>
+  </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+  </div>
+<script>
+  function showBookModal(imageFile, title, description, author) {
+    document.getElementById('modal-cover').src = imageFile;
+    document.getElementById('modal-title').innerText = title;
+    document.getElementById('modal-description').innerText = description;
+    document.getElementById('modal-author').innerText = "Penulis: " + author;
+    document.getElementById('book-modal').style.display = 'block'; // atau 'block' sesuai CSS kamu
+  }
+
+  function closeModal() {
+    document.getElementById('book-modal').style.display = 'none';
+  }
+
+  function comingSoon() {
+    alert("Fitur pinjam buku akan segera tersedia!");
+  }
+</script>
+</main>
+
+<section id="kontak" class="contact-section">
+    <h2>Hubungi Kami</h2>
+    <div class="contact-container">
+        <div class="contact-info">
+            <p><strong>Alamat:</strong> Jl. Pendidikan No. 123, Semarang, Indonesia</p>
+            <p><strong>Telepon:</strong> (024) 123-4567</p>
+            <p><strong>Email:</strong> info@vidyamandala.ac.id</p>
+        </div>
+
+        <form class="contact-form">
+            <input type="text" placeholder="Nama" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Pesan" rows="5" required></textarea>
+            <button type="submit">Kirim Pesan</button>
+        </form>
+    </div>
+
+    <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.5392700883515!2d110.42228031477786!3d-7.336935394711393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708caa3519c54d%3A0x1a8b39464d3a97cf!2sUniversitas%20Diponegoro!5e0!3m2!1sid!2sid!4v1682733286791!5m2!1sid!2sid"
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Vidya Mandala. All rights reserved.</p>
+</footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+
+    // Toggle Sidebar
+    function toggleMenu() {
+      const nav = document.getElementById('nav-menu');
+      nav.classList.toggle('show');
+    }
+
+    const toggleButton = document.querySelector('.menu-toggle');
+    if (toggleButton) {
+      toggleButton.addEventListener('click', toggleMenu);
+    }
+
+    // Menutup sidebar saat klik di luar
+    document.addEventListener('click', function (event) {
+      const nav = document.getElementById('nav-menu');
+      const toggle = document.querySelector('.menu-toggle');
+      if (nav && toggle && !nav.contains(event.target) && !toggle.contains(event.target)) {
+        nav.classList.remove('show');
+      }
+    });
+
+    // Tombol Dark Mode
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', function () {
+        document.body.classList.toggle('dark');
+        themeToggle.textContent = document.body.classList.contains('dark') ? "☀️" : "🌙";
+      });
+    }
+
+    // Deskripsi Box
+    window.showDescription = function (title, description) {
+      const box = document.getElementById('description-box');
+      box.innerHTML = `<h3>${title}</h3><p>${description}</p>`;
+      box.style.padding = "15px";
+      box.style.border = "1px solid #ccc";
+      box.style.marginTop = "20px";
+      box.style.borderRadius = "10px";
+    }
+
+    // Coming Soon
+    window.comingSoon = function () {
+      alert("Fitur peminjaman buku akan segera hadir! (Coming Soon)");
+    }
+
+    // Modal Buku
+    window.showBookModal = function (coverSrc, title, description, author) {
+      document.getElementById('modal-cover').src = coverSrc;
+      document.getElementById('modal-title').innerText = title;
+      document.getElementById('modal-description').innerText = description;
+      document.getElementById('modal-author').innerText = "Penulis: " + author;
+      document.getElementById('book-modal').style.display = 'block';
+    }
+
+    window.closeModal = function () {
+      document.getElementById('book-modal').style.display = 'none';
+      const popup = document.getElementById('popup');
+      if (popup) {
+        popup.classList.add('hidden');
+      }
+    }
+
+    // Escape key untuk nutup modal
+    document.addEventListener('keydown', function (e) {
+      if (e.key === "Escape") {
+        closeModal();
+      }
+    });
+
+    // Fitur Pencarian Buku
+    window.searchBooks = function () {
+      const input = document.getElementById("search-input").value.toLowerCase();
+      const books = document.querySelectorAll(".book");
+
+      books.forEach(book => {
+        const title = book.querySelector("p").innerText.toLowerCase();
+        book.style.display = title.includes(input) ? "block" : "none";
+      });
+    }
+
+  });
+  
+</script>
+<script>
+  const themeToggle = document.getElementById('theme-toggle');
+  const savedTheme = localStorage.getItem('theme');
+
+  // Terapkan tema saat halaman dimuat
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark');
+    if (themeToggle) themeToggle.textContent = '☀️';
+  } else {
+    if (themeToggle) themeToggle.textContent = '🌙';
+  }
+
+  // Toggle tema dan simpan ke localStorage
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      themeToggle.textContent = isDark ? '☀️' : '🌙';
+    });
+  }
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById('theme-toggle');
+    const saved = localStorage.getItem('theme');
+
+    // 1. Terapkan tema yang tersimpan (jika ada)
+    if (saved === 'dark') {
+      document.body.classList.add('dark');
+      toggle.textContent = '☀️';
+    } else {
+      toggle.textContent = '🌙';
+    }
+
+    // 2. Event listener untuk toggle tombol
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      const isDark = document.body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      toggle.textContent = isDark ? '☀️' : '🌙';
+    });
+  });
+</script>
+
+</body>
+</html>
